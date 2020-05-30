@@ -56,7 +56,7 @@ class HMM:
 
     def fit_maxlikelihood(self, sents, tags, k=1):
         # 初始化转移矩阵和输出矩阵
-         # 这里使用add-k smoothing进行平滑处理，解决概率连乘中可能出现的0
+        # 这里使用add-k smoothing进行平滑处理，解决概率连乘中可能出现的0
         self.trans_matrix = np.ones((self.hidden_state_num, self.hidden_state_num)) * k
         self.output_matrix = np.ones((self.hidden_state_num, self.output_num)) * k
         self.init_prob = np.ones(self.hidden_state_num) * k
